@@ -16,3 +16,8 @@ variable "enable_dns_support" {
   default     = true
 }
 
+variable "tags" {
+  description = "A map of tags to add to the VPC"
+  type        = map(string)
+  default     = {}
+}
