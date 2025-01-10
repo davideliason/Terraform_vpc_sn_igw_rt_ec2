@@ -23,3 +23,9 @@ resource "aws_subnet" "private-subnet" {
 
   tags = var.tags
 }
+
+# ouptut vars
+output "public_subnet_id" {
+  value = aws_subnet.public-subnet.id
+
+}
