@@ -31,6 +31,12 @@ variable "public_subnet_cidr_block" {
 }
 
 
-cidr_block              = var.public_subnet_cidr_block
+# az var
+variable "availability_zone" {
+  description = "The availability zone for the subnet"
+  type        = string
+  default     = "us-west-2a"
+}
+
 availability_zone       = var.availability_zone
 map_public_ip_on_launch = true
