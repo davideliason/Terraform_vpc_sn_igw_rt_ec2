@@ -21,3 +21,16 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+# public subnet
+
+variable "public_subnet_cidr_block" {
+  description = "The CIDR block for the public subnet"
+  type        = string
+  default     = "10.0.0.0/24"
+}
+
+
+cidr_block              = var.public_subnet_cidr_block
+availability_zone       = var.availability_zone
+map_public_ip_on_launch = true
