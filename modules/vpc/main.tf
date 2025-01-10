@@ -24,6 +24,12 @@ resource "aws_subnet" "private-subnet" {
   tags = var.tags
 }
 
+resource "aws_internet_gateway" "my-igw" {
+  vpc_id = aws_vpc.my-vpc.id
+  tags   = var.tags
+
+}
+
 # ouptut vars
 output "public_subnet_id" {
   value = aws_subnet.public-subnet.id
