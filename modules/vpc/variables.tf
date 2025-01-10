@@ -38,5 +38,11 @@ variable "availability_zone" {
   default     = "us-west-2a"
 }
 
-availability_zone       = var.availability_zone
-map_public_ip_on_launch = true
+# public ip on launch default
+variable "map_public_ip_on_launch" {
+  description = "Map public IP on launch"
+  type        = bool
+  default     = true
+}
+
+
