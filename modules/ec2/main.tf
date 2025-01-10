@@ -1,6 +1,6 @@
 resource "aws_instance" "my-public-server" {
   ami           = var.ami
-  instance_type = var_instance_type
+  instance_type = var.instance_type
   subnet_id     = module.vpc.public_subnet_id
 
   tags = {
