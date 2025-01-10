@@ -27,13 +27,10 @@ module "vpc" {
 
 
 module "ec2_instance" {
-  source        = "./modules/ec2"
+  source = "./modules/ec2"
+
   subnet_id     = module.vpc.public_subnet_id
   ami           = "ami-07d9cf938edb0739b"
   instance_type = "t2.micro"
-
-  tags = {
-    Name = "my-public-server"
-  }
 
 }
