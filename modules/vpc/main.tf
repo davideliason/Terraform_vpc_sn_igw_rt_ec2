@@ -42,6 +42,12 @@ resource "aws_route_table" "public-subnet-rt" {
   tags = var.tags
 }
 
+# associate public subnet with route table
+resource "aws_route_table_association" "rt-assoc" {
+  subnet_id      = aws_subnet.public-subnet.id
+  route_table_id = aws_route_table.public-subnet-rt.id
+}
+
 
 # ouptut vars
 output "public_subnet_id" {
