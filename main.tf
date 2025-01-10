@@ -18,7 +18,7 @@ provider "aws" {
 module "vpc" {
   source                   = "./modules/vpc"
   cidr_block               = "10.0.0.0/16"
-  public_subnet_cidr_block = "10.0.0.0/16"
+  public_subnet_cidr_block = "10.0.0.0/24"
 
   tags = {
     Name = "my-vpc"

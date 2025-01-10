@@ -13,5 +13,13 @@ resource "aws_subnet" "public-subnet" {
   map_public_ip_on_launch = true
 
   tags = var.tags
+}
 
+resource "aws_subnet" "private-subnet" {
+  vpc_id                  = aws_vpc.my-vpc.id
+  cidr_block              = var.private_subnet_cidr_block
+  availability_zone       = var.availability_zone
+  map_public_ip_on_launch = false
+
+  tags = var.tags
 }
